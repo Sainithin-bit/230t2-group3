@@ -32,7 +32,11 @@ The notebook is named `230T2-bert-model.ipynb`.
 
 ## Part 4: backtest strategy
 
-In order to simulate predictive prowess of the sentiment factor calculated above, we implement a simple paper portfolio backtest strategy. There were quite a few alternatives in order to implement paper portfolios. Few of the things we came up with were:
+In order to simulate predictive prowess of the sentiment factor calculated above, we implement a simple paper portfolio backtest strategy. There were quite a few alternatives in order to implement paper portfolios. 
+
+We calculate the sentiment signal based on the previous 20 days for a given day. Then we adjust by bias, and take sign of signal where we buy if signal > 0 and sell if signal < 0. We hold for one day and calculate daily pnl without transaction cost. With these returns we assess performance of the sentiment signal such as mean, vol, sharpe ratio.
+
+Few of the things we came up with were:
 
 - Act on the instantaneous sentiment signal calculated everyday,
     - Hold for 1 day
